@@ -1,0 +1,36 @@
+
+sudo docker ntodd/video-transcoding
+
+sudo docker run -i -t -v "`pwd`":/data -v /media/data/4tb/Media/Movies2:/in ntodd/video-transcoding bash /in/create_queue_of_mkv_files.sh
+
+
+sudo docker run -i -t -v "`pwd`":/data -v /media/data/4tb/Media/Movies2:/in ntodd/video-transcoding bash /data/create_queue_of_mkv_files.sh /in 30
+
+
+transcode-video --add-audio all --crop 0:0:240:240 "/data/test/101 Dalmatians.mkv"
+
+sudo docker run -itv "`pwd`":/data ntodd/video-transcoding transcode-video --add-audio all --crop 0:0:240:240 "/data/test/101 Dalmatians.mkv"
+
+
+
+sudo docker run -i -t -v "`pwd`":/data -v /media/data/4tb/Media/Movies2:/in ntodd/video-transcoding
+
+sudo docker run -i -t -v "`pwd`":/data -v /media/data/4tb/Media/Movies2:/in ntodd/video-transcoding bash /in/create_queue_of_mkv_files.sh
+
+transcode-video --add-audio all --crop 0:0:240:240 "/data/test/101 Dalmatians.mkv"
+
+
+detect-crop "/data/101 Dalmatians.mkv"
+
+
+-v /docker /home/bob/scripts/docker
+
+
+
+
+find /home/bob/scripts/docker -size +1G
+
+
+
+
+docker run -itv /home/bob/scripts/docker/video-transcoding:/data
